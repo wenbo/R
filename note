@@ -1,0 +1,41 @@
+CRAN: comprehensive r archive network
+
+ To get more information on
+any specific named function, for example solve, the command is
+> help(solve)
+An alternative is
+> ?solve
+
+help("[[")
+
+On most R installations help is available in HTML format by running
+> help.start()
+which will launch a Web browser that allows the help pages to be browsed with hyperlinks.
+
+
+The help.search command (alternatively ??) allows searching for help in various ways. For example,
+> ??solve
+Try ?help.search for details and more examples.
+The examples on a help topic can normally be run by
+> example(topic)
+
+
+If commands are stored in an external file, say commands.R in the working directory work, they may be executed at any time in an R session with the command
+> source("commands.R")
+
+During an R session, objects are created and stored by name (we discuss this process in the next session). The R command
+> objects()
+(alternatively, ls()) can be used to display the names of (most of) the objects which are currently stored within R. The collection of objects currently stored is called the workspace.
+To remove objects the function rm is available:
+> rm(x, y, z, ink, junk, temp, foo, bar)
+All objects created during an R session can be stored permanently in a file for use in future R sessions. At the end of each R session you are given the opportunity to save all the currently available objects. If you indicate that you want to do this, the objects are written to a file called .RData6 in the current directory, and the command lines used in the session are saved to a file called .Rhistory.
+When R is started at later time from the same directory it reloads the workspace from this file. At the same time the associated commands history is reloaded.
+
+> x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+This is an assignment statement using the function c() which in this context can take an arbitrary number of vector arguments and whose value is a vector got by concatenating its arguments end to end.
+
+To work with complex numbers, supply an explicit complex part. Thus
+sqrt(-17)
+will give NaN and a warning, but
+sqrt(-17+0i)
+will do the computations as complex numbers.
