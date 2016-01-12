@@ -1,5 +1,8 @@
 CRAN: comprehensive r archive network
+NA: not available
 
+To quit the R program the command is
+> q()
  To get more information on
 any specific named function, for example solve, the command is
 > help(solve)
@@ -39,3 +42,46 @@ sqrt(-17)
 will give NaN and a warning, but
 sqrt(-17+0i)
 will do the computations as complex numbers.
+
+
+For example
+> seq(-5, 5, by=.2) -> s3
+generates in s3 the vector c(-5.0, -4.8, -4.6, …, 4.6, 4.8, 5.0). Similarly
+> s4 <- seq(length=51, from=-5, by=.2)
+generates the same vector in s4.
+The fifth argument may be named along=vector, which is normally used as the only argument to create the sequence 1, 2, …, length(vector), or the empty sequence if the vector is empty (as it can be).
+A related function is rep() which can be used for replicating an object in various complicated ways. The simplest form is
+> s5 <- rep(x, times=5)
+which will put five copies of x end-to-end in s5. Another useful version is
+> s6 <- rep(x, each=5)
+which repeats each element of x five times before moving on to the next.
+
+‘NaN’ means ‘Not a Number’
+
+> labs <- paste(c("X","Y"), 1:10, sep="")
+makes labs into the character vector
+c("X1", "Y2", "X3", "Y4", "X5", "Y6", "X7", "Y8", "X9", "Y10")
+
+index vectors(索引矢量)can be any of four distinct types.
+1. A logical vector. In this case the index vector is recycled to the same length as the vector from which elements are to be selected. Values corresponding to TRUE in the index vector are selected and those corresponding to FALSE are omitted. For example
+> y <- x[!is.na(x)]
+creates (or re-creates) an object y which will contain the non-missing values of x, in the same order. Note that if x has missing values, y will be shorter than x. Also
+> (x+1)[(!is.na(x)) & x>0] -> z
+creates an object z and places in it the values of the vector x+1 for which the corresponding value in x was both non-missing and positive.
+2. A vector of positive integral quantities. In this case the values in the index vector must lie in the set {1, 2, …, length(x)}. The corresponding elements of the vector are selected and concatenated, in that order, in the result. The index vector can be of any length and the result is of the same length as the index vector. For example x[6] is the sixth component of x and
+> x[1:10]
+selects the first 10 elements of x (assuming length(x) is not less than 10). Also
+> c("x","y")[rep(c(1,2,2,1), times=4)]
+(an admittedly unlikely thing to do) produces a character vector of length 16 consisting of "x", "y", "y", "x" repeated four times.
+3. A vector of negative integral quantities. Such an index vector specifies the values to be excluded rather than included. Thus
+> y <- x[-(1:5)]
+gives y all but the first five elements of x.
+4. A vector of character strings. This possibility only applies where an object has a names attribute to identify its components. In this case a sub-vector of the names vector may be used in the same way as the positive integral labels in item 2 further above.
+> fruit <- c(5, 10, 1, 20)
+> names(fruit) <- c("orange", "banana", "apple", "peach")
+> lunch <- fruit[c("apple","orange")]
+The advantage is that alphanumeric names are often easier to remember than numeric indices. This option is particularly useful in connection with data frames, as we shall see later.
+
+3.1
+The functions mode(object) and length(object) can be used to find out the mode and length of any defined structure.
+Further properties of an object are usually provided by attributes(object),

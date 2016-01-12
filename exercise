@@ -1,0 +1,6 @@
+
+ seq(-5, 5, by=.2) -> s3
+ s5 <- rep(x, times=5)
+ s6 <- rep(x, each=5)
+ temp <- x > 13
+ 
