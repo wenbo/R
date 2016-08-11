@@ -1,6 +1,10 @@
 #Online Code
 <a href="https://github.com/dataspelunking/MLwR/">https://github.com/dataspelunking/MLwR/</a>
 
+#How to run
+$ r
+> source("MLwR_v2_02.r")
+
 #What this book covers
 
 ##Chapter 1, Introducing Machine Learning, presents the terminology and concepts that define and distinguish machine learners, as well as a method for matching a learning task with the appropriate algorithm.
