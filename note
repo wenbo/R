@@ -1,6 +1,12 @@
 CRAN: comprehensive r archive network
 NA: not available
 
+In order to conserve memory, R does not load every installed package by default. Instead, packages are loaded by users as they are needed, using the library() function.
+> library(ggplot2)
+
+The most direct way to install a package is via the install.packages() function.
+> ?install.packages
+
 To quit the R program the command is
 > q()
  To get more information on
