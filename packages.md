@@ -16,3 +16,9 @@
 
 ##RODBC (ODBC is a standard protocol for connecting to databases regardless of operating system or DBMS.)
 install.packages("RODBC")
+
+
+ install.packages("neuralnet")
+ install.packages("kernlab")
+ source("MLwR_v2_07.r")
+ source("linear_SVM.r")
