@@ -1,5 +1,8 @@
 CRAN: comprehensive r archive network
 NA: not available
+glm: generalized linear models http://127.0.0.1:23682/library/stats/html/glm.html
+ setwd("c:/usr")             # 作業ディレクトリを変更する
+ getwd()                     # 現在の作業ディレクトリを確認する
 
 In order to conserve memory, R does not load every installed package by default. Instead, packages are loaded by users as they are needed, using the library() function.
 > library(ggplot2)
